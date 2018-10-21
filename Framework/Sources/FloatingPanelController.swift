@@ -76,12 +76,14 @@ public class FloatingPanelController: UIViewController, UIScrollViewDelegate, UI
         return floatingPanel.state
     }
 
-    /// The insets derived from the content insets and the safe area of the tracking scroll view.
+    /// The content insets of the tracking scroll view derived the safe area of the parent view
     public var adjustedContentInsets: UIEdgeInsets {
         return floatingPanel.layoutAdapter.adjustedContentInsets
     }
 
     /// The behavior for determining the adjusted content offsets.
+    ///
+    /// This property specifies how the content area of the tracking scroll view are modified using `adjustedContentInsets`. The default value of this property is FloatingPanelController.ContentInsetAdjustmentBehavior.always.
     public var contentInsetAdjustmentBehavior: ContentInsetAdjustmentBehavior = .always
 
     private var floatingPanel: FloatingPanel!
